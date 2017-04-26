@@ -117,8 +117,13 @@ function processInput(key) {
       eatDot();
       break;
     case 'p':
-      eatPowerPellet();
-      break;
+      if (powerPellets > 0){
+        eatPowerPellet();
+        break;
+      } else {
+        console.log('No pellets left!!');
+        break;
+      }
     case '1':
       eatGhost(ghosts[0]);
       break;
