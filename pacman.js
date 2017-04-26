@@ -99,6 +99,13 @@ function eatDot() {
 }
 
 
+function eatPowerPellet() {
+  powerPellets--;
+  score = parseInt(score) + 50;
+  ghosts.edible = true;
+}
+
+
 // Process Player's Input
 function processInput(key) {
   switch(key) {
