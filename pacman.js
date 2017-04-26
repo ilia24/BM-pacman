@@ -1,7 +1,7 @@
 // Setup initial game stats
 var score = 0;
 var lives = 2;
-var powerPellets 4;
+var powerPellets = 4;
 
 // Define your ghosts here
 
@@ -23,7 +23,7 @@ function clearScreen() {
 }
 
 function displayStats() {
-  console.log('Score: ' + score + '     Lives: ' + lives);
+  console.log('Score: ' + score + '     Lives: ' + lives + '\n\nPower Pellets: ' + powerPellets);
 }
 
 function displayMenu() {
@@ -109,13 +109,17 @@ function processInput(key) {
       eatDot();
       break;
     case '1':
-      eatGhost(ghosts[1])
+      eatGhost(ghosts[0]);
+      break;
     case '2':
-      eatGhost(ghosts[2])
+      eatGhost(ghosts[1]);
+      break;
     case '3':
-      eatGhost(ghosts[3])
+      eatGhost(ghosts[2]);
+      break;
     case '4':
-      eatGhost(ghosts[4])
+      eatGhost(ghosts[3]);
+      break;
     default:
       console.log('\nInvalid Command!');
   }
