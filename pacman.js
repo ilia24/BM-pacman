@@ -1,7 +1,7 @@
 // Setup initial game stats
 var score = 0;
 var lives = 2;
-
+var powerPellets 4;
 
 // Define your ghosts here
 
@@ -110,6 +110,12 @@ function processInput(key) {
       break;
     case '1':
       eatGhost(ghosts[1])
+    case '2':
+      eatGhost(ghosts[2])
+    case '3':
+      eatGhost(ghosts[3])
+    case '4':
+      eatGhost(ghosts[4])
     default:
       console.log('\nInvalid Command!');
   }
