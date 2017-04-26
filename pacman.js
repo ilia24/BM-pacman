@@ -29,12 +29,29 @@ function displayStats() {
 function displayMenu() {
   console.log('\n\nSelect Option:\n');  // each \n creates a new line
   console.log('(d) Eat Dot');
+  console.log('(1) Eat Inky')
+  console.log('(2) Eat Pinky')
+  console.log('(3) Eat Blinky')
+  console.log('(4) Eat Clyde')
   console.log('(q) Quit');
 }
 
 function displayPrompt() {
   // process.stdout.write is similar to console.log except it doesn't add a new line after the text
   process.stdout.write('\nWaka Waka :v '); // :v is the Pac-Man emoji.
+}
+
+function eatGhost(ghost){
+  if (ghost.edible === false){
+    lives--;
+    console.log('\nPacman has been hurt by ' + ghost.name)
+    if ( lives === 0){
+      console.log('\nPacman has been eaten by ' + ghost.name + '. Its color is ' + ghost.color)
+      process.exit();
+    }
+  } else {
+    console.log ('You have eaten' + ghost.name)
+  }
 }
 
 //ghosts
@@ -91,6 +108,8 @@ function processInput(key) {
     case 'd':
       eatDot();
       break;
+    case '1':
+      eatGhost(ghosts[1])
     default:
       console.log('\nInvalid Command!');
   }
